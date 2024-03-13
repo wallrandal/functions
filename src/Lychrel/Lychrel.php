@@ -2,6 +2,8 @@
 
 namespace App\Lychrel;
 
+use GMP;
+
 class Lychrel
 {
 
@@ -12,14 +14,14 @@ class Lychrel
     public function convergesAtIteration(int $n, int $limit): int
     {
         $iteration = 0;
-        return $this->converge($n, $iteration);
+        return $this->converge(gmp_abs($n), $iteration, $limit);
     }
 
     /**
-     * @param int $n
+     * @param GMP $n
      * @return bool
      */
-    public function isPalindrome(int $n): bool
+    public function isPalindrome(GMP $n): bool
     {
         $digits = (string)$n;
 
@@ -33,7 +35,7 @@ class Lychrel
         return true;
     }
 
-    public function reverse(int $n): int
+    public function reverse(\GMP $n): int
     {
         $digits = (string)$n;
         $reverse = strrev($digits);
@@ -41,14 +43,14 @@ class Lychrel
     }
 
     /**
-     * @param int $n
+     * @param GMP $n
      * @param int $iteration
      * @return int
      */
-    public function converge(int $n, int $iteration): int
+    public function converge(GMP $n, int $iteration, int $limit): int
     {
-        if (!$this->isPalindrome($n)) {
-            return $this->converge($n + $this->reverse($n), $iteration + 1);
+        if (!$this->isPalindrome($n) && $iteration < $limit) {
+            return $this->converge($n + $this->reverse($n), $iteration + 1, $limit);
         }
         return $iteration;
     }

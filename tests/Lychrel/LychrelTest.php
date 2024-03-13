@@ -25,6 +25,7 @@ class LychrelTest extends TestCase
         $this->convergesAtIteration(19, 2);
         $this->convergesAtIteration(78, 4);
         $this->convergesAtIteration(89, 24);
+        $this->doesNotConverge(196);
     }
 
     private function convergesAtIteration(int $n, int $iteration): void
@@ -50,12 +51,12 @@ class LychrelTest extends TestCase
 
     private function isPalindrome(int $int): void
     {
-        self::assertTrue($this->lychrel->isPalindrome($int));
+        self::assertTrue($this->lychrel->isPalindrome(gmp_abs($int)));
     }
 
     private function isNotPalindrome(int $int): void
     {
-        self::assertFalse($this->lychrel->isPalindrome($int));
+        self::assertFalse($this->lychrel->isPalindrome(gmp_abs($int)));
     }
 
     public function testReversals(): void
@@ -68,6 +69,11 @@ class LychrelTest extends TestCase
 
     private function reversed(int $n, int $r): void
     {
-        self::assertEquals($r, $this->lychrel->reverse($n));
+        self::assertEquals($r, $this->lychrel->reverse(gmp_abs($n)));
+    }
+
+    private function doesNotConverge(int $n): void
+    {
+        $this->convergesAtIteration($n, $this->limit);
     }
 }
