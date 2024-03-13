@@ -1,4 +1,5 @@
-# Projeto Stack
+# Projeto Clean code
 
-Projeto criado para estudar o módulo Functions do livro Clean Code. Segue o exemplo contido no vídeo "Stack" do curso
-Clean Code. Pode ser encontrado aqui: https://cleancoders.com/episode/clean-code-episode-4-sc-1-stack
+Projeto criado para estudar os ensinamentos ensinados no livro Clean Code. Segue os exemplos contidos nos vídeos
+disponíveis no curso
+Clean Code, facilitado por robert C martin. Pode ser encontrado aqui: https://cleancoders.com
