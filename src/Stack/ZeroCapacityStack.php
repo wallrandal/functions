@@ -1,5 +1,6 @@
 <?php
 
+namespace App\Stack;
 class ZeroCapacityStack implements Stack
 {
 

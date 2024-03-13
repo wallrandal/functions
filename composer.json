@@ -1,7 +1,12 @@
 {
     "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Tests\\": "tests"
+        },
         "classmap": [
-            "src/"
+            "src/",
+            "tests"
         ]
     },
     "require-dev": {

@@ -1,6 +1,10 @@
 <?php
 
-class IllegalCapacityException extends RuntimeException
+namespace App\Stack;
+
+use RuntimeException;
+
+class EmptyException extends RuntimeException
 {
 
 }

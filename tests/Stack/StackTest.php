@@ -1,6 +1,14 @@
 <?php
 
+namespace Tests\Stack;
+
 use PHPUnit\Framework\TestCase;
+use App\Stack\BoundedStack;
+use App\Stack\EmptyException;
+use App\Stack\IllegalCapacityException;
+use App\Stack\StackOverflowException;
+use App\Stack\StackUnderflowException;
+use RuntimeException;
 
 class StackTest extends TestCase
 {

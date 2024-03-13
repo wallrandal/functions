@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Stack;
+
 class BoundedStack implements Stack
 {
     private int $size = 0;

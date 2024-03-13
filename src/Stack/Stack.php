@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Stack;
+
 interface Stack
 {
     public function isEmpty(): bool;
