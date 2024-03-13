@@ -2,17 +2,17 @@
 
 namespace Tests\Stack;
 
+use App\Stack\Stack;
 use PHPUnit\Framework\TestCase;
 use App\Stack\BoundedStack;
 use App\Stack\EmptyException;
 use App\Stack\IllegalCapacityException;
 use App\Stack\StackOverflowException;
 use App\Stack\StackUnderflowException;
-use RuntimeException;
 
 class StackTest extends TestCase
 {
-    private BoundedStack $stack;
+    private Stack $stack;
 
     protected function setUp(): void
     {
@@ -75,7 +75,7 @@ class StackTest extends TestCase
     public function testWhenCreatingStackWithNegativeSizeShouldThrowIllegalCapacity(): void
     {
         $this->expectException(IllegalCapacityException::class);
-        $stack = BoundedStack::Make(-1);
+        BoundedStack::Make(-1);
     }
 
     public function testWhenCreatingStackWithZeroCapacityAnyPushShouldOverflow(): void
